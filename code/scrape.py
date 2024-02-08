@@ -1,6 +1,7 @@
 import requests
 from typing import List
 from functools import reduce
+from functools import reduce
 from bs4 import BeautifulSoup as bs
 
 class DocScrapper:
