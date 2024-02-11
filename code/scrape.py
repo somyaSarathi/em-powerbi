@@ -36,8 +36,13 @@ class DocScrapper:
     
 
     def url_to_doc(self, url: str) -> None:
+        '''
+        Scrapes the provided webpage into a markdown file
+        '''
+        # Requesting page content 
+        # - Customised for each URLs
         if url.startswith('/en-us/'):
-            response = requests.get('https://learn.microsoft.com'+url, headers=self.HEADERS)
+            response = self.session.get('https://learn.microsoft.com'+url, headers=self.HEADERS)
         elif url.startswith('..'):
             url = url[3:]
             response = self.session.get(url='https://learn.microsoft.com/en-us/power-bi/'+url, headers=self.HEADERS)
@@ -45,13 +50,16 @@ class DocScrapper:
             response = self.session.get(url=self.URL+url, headers=self.HEADERS)
         response.raise_for_status()
 
+        # Extracting desired session
         soup = bs(response.text, 'lxml')
         content_div = soup.find('div', class_='content')
 
+        # Removing unwanted chunks
         content_div.find('div').decompose()
         content_div.find('div').decompose()
         content_div.find('nav').decompose()
 
+        # Document content 
         article = ''
         for tag in content_div:
             if tag == '\n' or tag.name == 'img':
@@ -62,17 +70,18 @@ class DocScrapper:
                 tag = '---'
             article += str(tag) + '\n'
         
+        # Creating documents
         with open(f'./doc/{url.split("/")[-1]}.md', 'w', encoding='utf-8') as doc:
                 doc.write(md(article))
 
     
     def generate_docs(self) -> None:
+        '''
+        Scrapes links and creates documents
+        '''
         urls = self.topic_url_list()
 
         for url in urls:
             self.url_to_doc(url)
 
         return
-    
-if __name__ == '__main__':
-    DocScrapper().generate_docs()
