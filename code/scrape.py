@@ -1,34 +1,78 @@
-import requests
-from typing import List
 from functools import reduce
+from typing import List
+
+import requests
 from bs4 import BeautifulSoup as bs
+from markdownify import markdownify as md
 
 class DocScrapper:
     def __init__(self) -> None:
         self.URL = 'https://learn.microsoft.com/en-us/power-bi/guidance/'
         self.HEADERS = {"User-Agent": "Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; RM-1152) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15254"}
-        self.INCLUDE = {'Power BI guidance', 'Transform and shape data', 'Data modeling', 'DAX', 'Power BI reports'}
+
+        # List of documentations to scrape
+        self.DESIRED_TOPICS = {'Power BI guidance', 'Transform and shape data', 'Data modeling', 'DAX', 'Power BI reports'}
+
+        self.session = requests.Session()
 
 
     def topic_url_list(self) -> List[str]:
         '''
         Returns a list of urls to scrape
         '''
-        # Extracting urls to crawl
-        return list(filter(lambda a: a.parent.parent.parent.h2.text in self.INCLUDE, bs(requests.get(url=self.URL, headers=self.HEADERS).text, 'lxml').findAll(class_='has-external-link-indicator')))
+        response = self.session.get(url=self.URL, headers=self.HEADERS)
+        response.raise_for_status()
 
+        # Extract page content
+        page_content = response.text
+        
+        # Extract all URLs present in the page
+        urls = bs(page_content, 'lxml').select('a.has-external-link-indicator')
+
+        # Filtering desired urls
+        filtered_urls = [ url['href'] for url in urls if url.parent.parent.parent.h2.text in self.DESIRED_TOPICS ]
+
+        return filtered_urls
+    
 
     def url_to_doc(self, url: str) -> None:
-        '''
-        Supposedly generate doc from scraping the url
-        '''
-        # TODO: convert html to markdown
-        # TODO: replace header tag with 
-        return reduce(lambda x,y: x+y, map(lambda x: str(x), filter(lambda x: x.name!='div' and x.name!='h2' and x.name!='h3', bs(requests.get(self.URL+url, headers=self.HEADERS).text, 'lxml').find('div', class_='content').contents)))
+        if url.startswith('/en-us/'):
+            response = requests.get('https://learn.microsoft.com'+url, headers=self.HEADERS)
+        elif url.startswith('..'):
+            url = url[3:]
+            response = self.session.get(url='https://learn.microsoft.com/en-us/power-bi/'+url, headers=self.HEADERS)
+        else:
+            response = self.session.get(url=self.URL+url, headers=self.HEADERS)
+        response.raise_for_status()
+
+        soup = bs(response.text, 'lxml')
+        content_div = soup.find('div', class_='content')
+
+        content_div.find('div').decompose()
+        content_div.find('div').decompose()
+        content_div.find('nav').decompose()
+
+        article = ''
+        for tag in content_div:
+            if tag == '\n' or tag.name == 'img':
+                continue
+            elif tag.name == 'h2' or tag.name == 'h3':
+                if tag.text == 'Related content':
+                    break
+                tag = '---'
+            article += str(tag) + '\n'
+        
+        with open(f'./doc/{url.split("/")[-1]}.md', 'w', encoding='utf-8') as doc:
+                doc.write(md(article))
+
     
-    def gen_doc(self):
-        # TODO: generate documentation topic_url_list+url_to_doc
-        pass
+    def generate_docs(self) -> None:
+        urls = self.topic_url_list()
 
+        for url in urls:
+            self.url_to_doc(url)
 
-print(DocScrapper().url_to_doc('report-page-tooltips'))
+        return
+    
+if __name__ == '__main__':
+    DocScrapper().generate_docs()
