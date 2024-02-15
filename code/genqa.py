@@ -5,6 +5,8 @@ import json
 import os
 from dotenv import load_dotenv
 
+from datetime import datetime
+
 import google.generativeai as genai
 
 
@@ -94,8 +96,11 @@ class GenerateQuestions:
             questions += json.loads( self.response(prompt_urls) )['questions']
         
         
-        questions = {'questions': questions}
-        with open('questions.json', 'w') as f:
+        questions = {
+            'date': int(datetime.now().strftime('%Y%m%d')),
+            'questions': questions
+        }
+        with open('./data/questions.json', 'w') as f:
             json.dump(questions, f, indent=4)
     
 

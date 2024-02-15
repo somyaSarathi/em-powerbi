@@ -4,7 +4,7 @@ Instructions:
 1. Follow all the instructions strictly.
 2. The questions must be based on following documentations ONLY:
 %s
-3. Generate 2 questions out of each link/documentations provided above.
+3. Generate stricktly 2 questions out of each link/documentations provided above.
 4. Cross verify all question with the above websites.
 5. Avoid generating questions around same or similar topics. Keep it random and wide.
 6. Use real-life based searios for questions.
