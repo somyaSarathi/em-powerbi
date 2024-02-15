@@ -1,0 +1,40 @@
+Generate 10 MCQ related to Power BI based on following instructions.
+
+Instructions:
+1. Follow all the instructions strictly.
+2. The questions must be based on following documentations ONLY:
+%s
+3. Generate 2 questions out of each link/documentations provided above.
+4. Cross verify all question with the above websites.
+5. Avoid generating questions around same or similar topics. Keep it random and wide.
+6. Use real-life based searios for questions.
+7. Generate exactly 5 easy questions, 3 medium questions and 2 hard questions out of 10 questions in Total strictly.
+8. The hard questions must be multi-correct, meanining one than one correct.
+9. Use stories and senarios for medium and hard question that inspires creative porblem solving.
+10. Format the response in JSON as shown bellow. Use proper json format and avoid escape character conflicts.
+
+Output:
+```json
+{
+    "questions": [
+        {
+            "question": "question statement",
+            "A": "option A",
+            "B": "option B",
+            "C": "option C",
+            "D": "option D",
+            "correct": ["A"],
+            "difficulty": "easy"
+        },
+        {
+            "question": "question statement",
+            "A": "option A",
+            "B": "option B",
+            "C": "option C",
+            "D": "option D",
+            "correct": ["A", "B"],
+            "difficulty": "hard"
+        }
+    ]
+}
+```

@@ -1,0 +1,561 @@
+{
+    "questions": [
+        {
+            "question": "Which of the following is NOT a best practice when using the FILTER function in DAX?",
+            "A": "Use FILTER as the first argument of another FILTER function",
+            "B": "Use FILTER to remove duplicate values",
+            "C": "Use FILTER to create a calculated table",
+            "D": "Use FILTER to apply multiple filters to a table",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "Which of the following is a benefit of using Power Query folding?",
+            "A": "Improved performance",
+            "B": "Reduced data duplication",
+            "C": "Increased flexibility",
+            "D": "All of the above",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the difference between incremental refresh and full refresh in Power Query?",
+            "A": "Incremental refresh updates only the changed data, while full refresh updates the entire dataset",
+            "B": "Full refresh is faster than incremental refresh",
+            "C": "Incremental refresh can be scheduled more frequently than full refresh",
+            "D": "All of the above",
+            "correct": [
+                "A",
+                "C"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "Which of the following is NOT a best practice when using referenced queries in Power Query?",
+            "A": "Use referenced queries to avoid duplicating code",
+            "B": "Use referenced queries to create dynamic queries",
+            "C": "Use referenced queries to improve performance",
+            "D": "Use referenced queries to create circular references",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the purpose of a dataflow in Power BI?",
+            "A": "To provide a central repository for data",
+            "B": "To enable self-service data preparation",
+            "C": "To automate data refresh and transformation",
+            "D": "All of the above",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "Which of the following is a characteristic of a star schema?",
+            "A": "A central fact table surrounded by dimension tables",
+            "B": "Normalized data structure",
+            "C": "Denormalized data structure",
+            "D": "Hierarchical data structure",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "You have a large dataset that takes a long time to load into Power BI. Which of the following techniques could you use to improve performance?",
+            "A": "Use incremental refresh",
+            "B": "Create a dataflow to automate data preparation",
+            "C": "Use Power Query folding",
+            "D": "All of the above",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "You are working on a Power BI report that uses data from multiple sources. Which of the following is the best way to ensure that the data is always up-to-date?",
+            "A": "Use scheduled refresh",
+            "B": "Use incremental refresh",
+            "C": "Use direct query",
+            "D": "Use a dataflow",
+            "correct": [
+                "A",
+                "D"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "You have a Power BI report that is taking a long time to load. Which of the following could be the cause?",
+            "A": "Complex calculations",
+            "B": "Large dataset",
+            "C": "Inefficient data model",
+            "D": "All of the above",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "You are working on a Power BI report that uses data from a SQL Server database. Which of the following techniques could you use to improve performance?",
+            "A": "Use indexed columns",
+            "B": "Use materialized views",
+            "C": "Use partitioning",
+            "D": "All of the above",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "Which of the following is a benefit of using a star schema in Power BI?",
+            "A": "Improved performance",
+            "B": "Reduced data redundancy",
+            "C": "Easier data analysis",
+            "D": "All of the above",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the purpose of data reduction in Power BI?",
+            "A": "To improve performance",
+            "B": "To reduce storage space",
+            "C": "To improve data quality",
+            "D": "To reduce the number of relationships in the model",
+            "correct": [
+                "A",
+                "B"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "Which of the following is a type of relationship in Power BI?",
+            "A": "One-to-one",
+            "B": "Many-to-one",
+            "C": "Many-to-many",
+            "D": "All of the above",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the purpose of bidirectional filtering in Power BI?",
+            "A": "To filter data in both directions",
+            "B": "To improve performance",
+            "C": "To reduce data redundancy",
+            "D": "To improve data quality",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "Which of the following is a common troubleshooting tip for relationships in Power BI?",
+            "A": "Check the data types of the columns",
+            "B": "Make sure the columns are unique",
+            "C": "Use the relationship checker",
+            "D": "All of the above",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "You have a table of sales data with the following columns: ProductID, ProductName, SalesAmount, and Date. You want to create a report that shows the total sales for each product over time. Which type of relationship should you create between the ProductID column and the Date column?",
+            "A": "One-to-one",
+            "B": "Many-to-one",
+            "C": "Many-to-many",
+            "D": "None of the above",
+            "correct": [
+                "B"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "You have a table of customer data with the following columns: CustomerID, CustomerName, Address, and PhoneNumber. You want to create a report that shows the total sales for each customer. However, some customers have multiple addresses and phone numbers. Which type of relationship should you create between the CustomerID column and the Address column?",
+            "A": "One-to-one",
+            "B": "Many-to-one",
+            "C": "Many-to-many",
+            "D": "None of the above",
+            "correct": [
+                "C"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "You have a table of sales data with the following columns: ProductID, ProductName, SalesAmount, and Date. You want to create a report that shows the total sales for each product over time. However, you also want to be able to filter the report by date. Which type of relationship should you create between the ProductID column and the Date column?",
+            "A": "One-to-one",
+            "B": "Many-to-one",
+            "C": "Many-to-many",
+            "D": "Bidirectional",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "You have a table of customer data with the following columns: CustomerID, CustomerName, Address, and PhoneNumber. You want to create a report that shows the total sales for each customer. However, some customers have multiple addresses and phone numbers. Which type of relationship should you create between the CustomerID column and the PhoneNumber column?",
+            "A": "One-to-one",
+            "B": "Many-to-one",
+            "C": "Many-to-many",
+            "D": "None of the above",
+            "correct": [
+                "C"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "You have a table of sales data with the following columns: ProductID, ProductName, SalesAmount, and Date. You want to create a report that shows the total sales for each product over time. However, you also want to be able to filter the report by product category. Which type of relationship should you create between the ProductID column and the ProductCategory column?",
+            "A": "One-to-one",
+            "B": "Many-to-one",
+            "C": "Many-to-many",
+            "D": "Bidirectional",
+            "correct": [
+                "B"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "Which of the following is a valid reason for a relationship to be inactive?",
+            "A": "The tables have no common columns.",
+            "B": "The tables have circular references.",
+            "C": "The tables have different data types in the common columns.",
+            "D": "The tables have different cardinalities.",
+            "correct": [
+                "B"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the purpose of a composite model in Power BI?",
+            "A": "To combine data from multiple sources into a single model.",
+            "B": "To improve performance by using DirectQuery for some tables and Import for others.",
+            "C": "To create relationships between tables from different sources.",
+            "D": "To share data models with other users.",
+            "correct": [
+                "A",
+                "B"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "Which of the following is a benefit of using DirectQuery in Power BI?",
+            "A": "Real-time data access.",
+            "B": "Improved performance for large datasets.",
+            "C": "Reduced data storage costs.",
+            "D": "Simplified data modeling.",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the difference between a report and a model in Power BI?",
+            "A": "A report is a visualization of data, while a model is the underlying data structure.",
+            "B": "A model is a visualization of data, while a report is the underlying data structure.",
+            "C": "A report and a model are the same thing.",
+            "D": "A model is a subset of a report.",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "Which of the following is a best practice for creating tooltips in Power BI reports?",
+            "A": "Use concise and informative text.",
+            "B": "Include images and charts to enhance visualization.",
+            "C": "Use tooltips to display data that is not visible in the report.",
+            "D": "Use tooltips to navigate to other pages in the report.",
+            "correct": [
+                "A",
+                "C"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "What is the purpose of using a cardinality filter in a relationship in Power BI?",
+            "A": "To limit the number of rows that are returned from the related table.",
+            "B": "To ensure that the relationship is always active.",
+            "C": "To improve performance by reducing the number of calculations that are performed.",
+            "D": "To prevent circular references in the model.",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "Which of the following is a scenario where it would be appropriate to use a composite model in Power BI?",
+            "A": "When you have data from multiple sources that need to be combined.",
+            "B": "When you have a large dataset that needs to be optimized for performance.",
+            "C": "When you need to share data models with other users.",
+            "D": "When you need to create complex visualizations.",
+            "correct": [
+                "A",
+                "B"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "What is the difference between a many-to-many relationship and a one-to-many relationship in Power BI?",
+            "A": "In a many-to-many relationship, each row in one table can be related to multiple rows in another table, while in a one-to-many relationship, each row in one table can be related to only one row in another table.",
+            "B": "In a one-to-many relationship, each row in one table can be related to multiple rows in another table, while in a many-to-many relationship, each row in one table can be related to only one row in another table.",
+            "C": "There is no difference between a many-to-many relationship and a one-to-many relationship.",
+            "D": "A many-to-many relationship is always active, while a one-to-many relationship is always inactive.",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "Which of the following is a best practice for optimizing the performance of a Power BI report?",
+            "A": "Use DirectQuery for large datasets.",
+            "B": "Create relationships between tables that have common columns.",
+            "C": "Use filters to limit the amount of data that is displayed.",
+            "D": "All of the above.",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the purpose of using a measure in a Power BI report?",
+            "A": "To calculate a value based on the data in the report.",
+            "B": "To create a visualization of data.",
+            "C": "To filter the data in the report.",
+            "D": "To navigate to other pages in the report.",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "Which of the following is NOT a type of tooltip in Power BI?",
+            "A": "Data label",
+            "B": "Card",
+            "C": "Visual",
+            "D": "Report",
+            "correct": [
+                "C",
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the purpose of the DRILLTHROUGH function in Power BI?",
+            "A": "To navigate to a different page in the report",
+            "B": "To filter data in the current visual",
+            "C": "To create a new measure",
+            "D": "To format the visual",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "Which error function in DAX returns a blank value if an expression evaluates to an error?",
+            "A": "IFERROR",
+            "B": "ISERROR",
+            "C": "ERROR",
+            "D": "BLANK",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "What is the best practice for handling blank values in DAX calculations?",
+            "A": "Convert them to zero",
+            "B": "Use the ISBLANK function to check for them",
+            "C": "Ignore them",
+            "D": "Replace them with a default value",
+            "correct": [
+                "B"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "Which of the following is NOT a valid argument for the FILTER function in DAX?",
+            "A": "A table expression",
+            "B": "A filter expression",
+            "C": "Another FILTER function",
+            "D": "A measure expression",
+            "correct": [
+                "C"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the difference between a column reference and a measure reference in DAX?",
+            "A": "Column references are used to access data, while measure references are used to create calculations",
+            "B": "Measure references are used to access data, while column references are used to create calculations",
+            "C": "There is no difference between column references and measure references",
+            "D": "Column references are used to create visuals, while measure references are used to create calculations",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "Which of the following is NOT a benefit of using tooltips in Power BI?",
+            "A": "They provide additional information about data points",
+            "B": "They can be used to navigate to other pages in the report",
+            "C": "They can be used to filter data",
+            "D": "They can be used to create custom visuals",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the purpose of the CROSSFILTER function in Power BI?",
+            "A": "To filter data in one table based on data in another table",
+            "B": "To create a new table",
+            "C": "To calculate a running total",
+            "D": "To format a visual",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "Which of the following is NOT a type of drillthrough in Power BI?",
+            "A": "Single",
+            "B": "Multiple",
+            "C": "Hierarchical",
+            "D": "Cross-filter",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the best practice for using the IFERROR function in DAX?",
+            "A": "Use it to handle all types of errors",
+            "B": "Use it only to handle specific types of errors",
+            "C": "Use it to replace error values with blank values",
+            "D": "Use it to create custom error messages",
+            "correct": [
+                "B"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "Which of the following is a best practice when referencing columns and measures in DAX?",
+            "A": "Use the fully qualified name, including the table name.",
+            "B": "Use the short name, if it is unique.",
+            "C": "Use the alias name, if it is defined.",
+            "D": "Use the column or measure name, without any prefixes.",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "When should you use the DIVIDE function in DAX?",
+            "A": "To divide two numbers.",
+            "B": "To calculate the percentage of a number.",
+            "C": "To compare two numbers.",
+            "D": "To round a number to a specific number of decimal places.",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the difference between the COUNTROWS function and the COUNT function in DAX?",
+            "A": "COUNTROWS counts the number of rows in a table, while COUNT counts the number of non-blank values in a column.",
+            "B": "COUNTROWS counts the number of non-blank values in a table, while COUNT counts the number of rows in a column.",
+            "C": "COUNTROWS and COUNT are the same function.",
+            "D": "COUNTROWS counts the number of unique values in a table, while COUNT counts the number of duplicate values in a column.",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "What is the purpose of the SELECTEDVALUE function in DAX?",
+            "A": "To return the selected value of a slicer or filter.",
+            "B": "To return the current value of a measure.",
+            "C": "To return the default value of a parameter.",
+            "D": "To return the value of a variable.",
+            "correct": [
+                "A"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "What is the best practice for using variables in DAX?",
+            "A": "Declare variables at the beginning of a measure or calculated column.",
+            "B": "Use variables to store intermediate values.",
+            "C": "Use variables to avoid repeating complex calculations.",
+            "D": "All of the above.",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "Which of the following is a reason to avoid using FILTER as a filter argument in DAX?",
+            "A": "It can lead to performance issues.",
+            "B": "It can make your code difficult to read and understand.",
+            "C": "It can cause errors if the filter expression is not evaluated correctly.",
+            "D": "All of the above.",
+            "correct": [
+                "D"
+            ],
+            "difficulty": "hard"
+        },
+        {
+            "question": "You have a table of sales data with the following columns: Product, Sales, and Date. You want to create a measure that calculates the total sales for the current month. Which of the following DAX expressions would you use?",
+            "A": "Total Sales = SUM(Sales) FILTER(Date, Date >= TODAY() && Date <= TODAY() + 30)",
+            "B": "Total Sales = SUM(Sales) FILTER(Date, Date >= TODAY() && Date <= TODAY() + 30)",
+            "C": "Total Sales = CALCULATE(SUM(Sales), Date >= TODAY() && Date <= TODAY() + 30)",
+            "D": "Total Sales = SUM(Sales) WHERE(Date >= TODAY() && Date <= TODAY() + 30)",
+            "correct": [
+                "C"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "You have a table of customer data with the following columns: CustomerID, CustomerName, and Sales. You want to create a measure that calculates the average sales for each customer. Which of the following DAX expressions would you use?",
+            "A": "Average Sales = AVERAGE(Sales) GROUPBY(CustomerID)",
+            "B": "Average Sales = AVERAGE(Sales) FILTER(CustomerID)",
+            "C": "Average Sales = CALCULATE(AVERAGE(Sales), GROUPBY(CustomerID))",
+            "D": "Average Sales = SUM(Sales) / COUNTROWS(CustomerID)",
+            "correct": [
+                "C"
+            ],
+            "difficulty": "easy"
+        },
+        {
+            "question": "You have a table of sales data with the following columns: Product, Sales, and Date. You want to create a measure that calculates the total sales for the current year. Which of the following DAX expressions would you use?",
+            "A": "Total Sales = SUM(Sales) FILTER(Date, YEAR(Date) = YEAR(TODAY()))",
+            "B": "Total Sales = SUM(Sales) FILTER(Date, YEAR(Date) = YEAR(TODAY()))",
+            "C": "Total Sales = CALCULATE(SUM(Sales), YEAR(Date) = YEAR(TODAY()))",
+            "D": "Total Sales = SUM(Sales) WHERE(YEAR(Date) = YEAR(TODAY()))",
+            "correct": [
+                "C"
+            ],
+            "difficulty": "medium"
+        },
+        {
+            "question": "You have a table of sales data with the following columns: Product, Sales, and Date. You want to create a measure that calculates the total sales for the current quarter. Which of the following DAX expressions would you use?",
+            "A": "Total Sales = SUM(Sales) FILTER(Date, QUARTER(Date) = QUARTER(TODAY()))",
+            "B": "Total Sales = SUM(Sales) FILTER(Date, QUARTER(Date) = QUARTER(TODAY()))",
+            "C": "Total Sales = CALCULATE(SUM(Sales), QUARTER(Date) = QUARTER(TODAY()))",
+            "D": "Total Sales = SUM(Sales) WHERE(QUARTER(Date) = QUARTER(TODAY()))",
+            "correct": [
+                "C"
+            ],
+            "difficulty": "hard"
+        }
+    ]
+}
