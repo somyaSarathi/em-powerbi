@@ -1,13 +1,14 @@
+from time import time
+
 from typing import List
 
-import json
+import google.generativeai as genai
 
 import os
 from dotenv import load_dotenv
 
+import json
 from datetime import datetime
-
-import google.generativeai as genai
 
 
 class GenerateQuestions:
@@ -64,7 +65,7 @@ class GenerateQuestions:
             )
         ).text[8:-3]
 
-    def generateJson(self, urls: List[str] = None) -> None:
+    def generateJson(self, urls: List[str] = None) -> int:
         '''
         Generates and formats the question into JSON
         - Creates only 50 questions.
@@ -74,16 +75,13 @@ class GenerateQuestions:
             urls = self.urls
         
         if not(isinstance(urls, List)):
-            raise ValueError(f'expected a List of urls("https://...") instead recieved {type(urls)}')
+            raise ValueError(f'expected a List of String instead recieved {type(urls)}')
         
         if not urls:
-            raise ValueError(f'expectd a List of urls("https://...") instead recieved an EMPTY List')
+            raise ValueError(f'expected a List of String instead recieved an EMPTY List')
         
         if not(all(isinstance(url, str) for url in urls)):
-            raise ValueError(f'expected a List of urls("https://...")')
-        
-        if not(any(url.startswith('https://') for url in urls)):
-            raise ValueError(f'expected a List of urls("https://...") instead recieved a string')
+            raise ValueError(f'expected a List of String')
         
 
         # List of json
@@ -93,7 +91,14 @@ class GenerateQuestions:
             prompt_urls = ''
             for j in range(i-5, i+1):
                 prompt_urls += '    - ' + urls[j] + '\n'
-            questions += json.loads( self.response(prompt_urls) )['questions']
+            
+            response = self.response(prompt_urls)
+            
+            try:
+                questions += json.loads(response)['questions']
+                print(f'🎉[Successful] Generated question set {(i+1)//5}')
+            except Exception:
+                return 1
         
         
         questions = {
@@ -102,7 +107,17 @@ class GenerateQuestions:
         }
         with open('./data/questions.json', 'w') as f:
             json.dump(questions, f, indent=4)
+        
+        return 0
     
 
 if __name__ == '__main__':
-    GenerateQuestions().generateJson()
+    i = 1
+    while True:
+        print(f'[Generating] Trial {i}')
+        result = GenerateQuestions().generateJson()
+        if result:
+            break
+        i += 1
+    
+    quit()

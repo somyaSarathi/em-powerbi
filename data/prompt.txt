@@ -11,7 +11,7 @@ Instructions:
 7. Generate exactly 5 easy questions, 3 medium questions and 2 hard questions out of 10 questions in Total strictly.
 8. The hard questions must be multi-correct, meanining one than one correct.
 9. Use stories and senarios for medium and hard question that inspires creative porblem solving.
-10. Format the response in JSON as shown bellow. Use proper json format and avoid escape character conflicts.
+10. Striclty format the response in JSON as shown bellow. Use appropriate JSON syntax. Avoid use of escape sequences.
 
 Output:
 ```json
